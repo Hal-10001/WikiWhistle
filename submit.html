@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit a Report | WikiWhistle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; color: #222; }
+    .container { max-width: 600px; margin: auto; background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+    h1 { color: #0066cc; }
+    label { display: block; margin-top: 1em; font-weight: bold; }
+    textarea, input, select { width: 100%; padding: 0.5em; margin-top: 0.5em; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #0066cc; color: #fff; border: none; padding: 1em 2em; border-radius: 4px; font-size: 1em; margin-top: 1em; cursor: pointer;}
+    button:hover { background: #004999; }
+    .back-link { margin-top: 2em; display: block; }
+    .back-link a { color: #0066cc; }
+    .back-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Submit a Report</h1>
+    <p><strong>Your submission is anonymous unless you choose to provide contact info.</strong></p>
+    <form name="wikiwhistle" method="POST" data-netlify="true">
+      <label for="narrative">Describe the injustice, corruption, or problem <span style="color:red">*</span></label>
+      <textarea id="narrative" name="narrative" rows="8" required placeholder="Describe what happened..."></textarea>
+      
+      <label for="location">General Location (optional)</label>
+      <input type="text" id="location" name="location" placeholder="City, State, Country, or 'prefer not to say'">
+
+      <label for="category">Category (select best fit, optional)</label>
+      <select id="category" name="category">
+        <option value="">Choose one</option>
+        <option value="corruption">Corruption</option>
+        <option value="abuse">Abuse of Power</option>
+        <option value="fraud">Fraud/Embezzlement</option>
+        <option value="exploitation">Exploitation</option>
+        <option value="waste">Waste/Mismanagement</option>
+        <option value="other">Other/Not Listed</option>
+      </select>
+
+      <label for="public">May we share your story on our public feed? (optional)</label>
+      <select id="public" name="public">
+        <option value="yes">Yes, it's okay to share publicly (anonymously)</option>
+        <option value="no">No, keep this private</option>
+        <option value="">No preference</option>
+      </select>
+
+      <label for="contact">Contact info (optional, only if you want follow-up; leave blank to stay anonymous)</label>
+      <input type="text" id="contact" name="contact" placeholder="Email, Signal, etc.">
+
+      <button type="submit">Submit</button>
+    </form>
+    <div class="back-link">
+      <a href="index.html">&larr; Back to WikiWhistle Home</a>
+    </div>
+  </div>
+</body>
+</html>
